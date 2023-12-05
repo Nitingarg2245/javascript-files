@@ -51,6 +51,9 @@ let obj4={...[1,2,3,4],..."hello"};
 console.log(obj4);//isme jo 1234 se index key bni wo bhi overwrite ho jayegi by hello
 let obj5={...[1,2,3,4,5]};
 console.log(obj5);
+//another way of cloning
+let newobj1=Object.assign({},obj1);
+console.log(newobj1);
 
 //object destructing
 let obj6={
@@ -76,3 +79,9 @@ for(let user of users) {
     console.log(user);
     console.log(user.name);
 }
+
+
+//optional chaining-The optional chaining ?. is a safe way to access nested object properties, even if an intermediate property doesn’t exist.The optional chaining ?. stops the evaluation if the value before ?. is undefined or null and returns undefined.
+// console.log(obj6.name.address.street);
+//lets see what happened here obj6 is there then .name is there after that .adrees is not defined and we are trying to access .street of an undefined value  error-Cannot read properties of undefined
+console.log(obj6?.name?.address?.street);//it returns undefined jaisi hi use pehla undefined milega to address pe aate hi wo aage movie ni krega and pehle jo error aa rha tha wo bhi ni aayega

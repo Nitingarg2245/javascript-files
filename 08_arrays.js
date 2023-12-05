@@ -52,17 +52,20 @@ const arr4=arr1.concat(arr2);//u can concat as my arrays as u want
 console.log(arr4);//returns a new arry doesnt change the existing one
 
 const arr5=[222,3,42,111];
-console.log(arr5.sort());//sort the original array and returns the modified array but the problem is here sorting is not like in c++ or java,javascript  sorts in lexicographical/dictionery way which is of no use so we will use compare as an argument 
+console.log(arr5.sort());//sort the original array and returns the modified array but the problem is here sorting is not like in c++ or java,javascript  sorts in lexicographical/dictionery or more specifically as per ascii character values  way which has its + or -ves like for array of names it work fine so we will use compare as a call back function 
 
 function compare(a,b){
     // return a-b;//a-b will be used for ascending order as we move from a to b chote se bda 
     return b-a;//it will be used for descending order as we move from b to a bde se chota
 }
 
-console.log(arr5.sort(compare));
+// console.log(arr5.sort(compare));
+//or a shorter way
+const sorted=arr5.sort((a,b)=>a-b);
+console.log(sorted);
 
 //slice method is cutting out the part of an array without modifying it 
-//splice here p ko man lo  plus or adding something new with the operation of slice
+//splice here p ko man lo  plus or adding something new with the operation of slice and modifies the original
 
 console.log(arr5.slice(2));//2nd index se leke last index tak sara extract kar dega
 console.log(arr5);//slice se original array mai no change
@@ -71,9 +74,20 @@ console.log(arr5.slice(0,3));//0th index se leke excluding 3rd index tak sara ex
 console.log(arr5);//slice se original array mai no change
 
 console.log(arr5.splice(2,2,15,16,17));//2nd index se start hoke 2 element delete kar do fir 15,16,17 add kar do
-console.log(arr5);//modifies the original
+console.log(arr5);//modifies the original//[3, 42, 15, 16, 17]
+
+//find method--return the the first value that satisfy the condition in the call back function 
+console.log(arr5.find(value=>value>10));//42
 
 console.log(arr5.reverse());
+
+//every method---returns true when all the array value satisfy the call back function condition
+console.log(arr5.every((value)=>value>2));//true
+console.log(arr5.every((value)=>value>4));//false
+
+//some method--return true if atleast one value satisfy the call back function condition
+console.log(arr5.some((value)=>value>40));//true
+console.log(arr5.some((value)=>value>45));//false
 
 //looping in arrays
 console.log("//classic approach");
@@ -140,3 +154,9 @@ console.log(Array.isArray(rest));
 }
 num(1,2,3,4,5);
 
+//fill method
+//craete an array using constructor and fill method
+const myArray=new Array(5).fill(-1);
+console.log(myArray);
+// console.log(arr8.fill(value to be filled,starting index,ending index +1));
+console.log(arr8.fill(10,0,4));
