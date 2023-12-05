@@ -159,4 +159,4 @@ num(1,2,3,4,5);
 const myArray=new Array(5).fill(-1);
 console.log(myArray);
 // console.log(arr8.fill(value to be filled,starting index,ending index +1));
-console.log(arr8.fill(10,0,4));
+// console.log(arr8.fill(10,0,4));
