@@ -27,7 +27,7 @@ js file execution-                                        ***************
 */
 
 
-//element slections
+//element selections
 
 //1)The document.getElementById() returns a DOM element specified by an id or null if no matching element found.If multiple elements have the same id, even though it is invalid, the getElementById() returns the first element it encounters.
 const username=document.getElementById("username");
@@ -44,3 +44,31 @@ console.log(allLables);
 //4)getelementsbyName -The getElementsByName() accepts a name which is the value of the name attribute of elements and returns a live NodeList of elements.
 const phone=document.getElementsByName("phone");
 console.log(phone);
+
+//query selector and queryselector all ke sath hmm kisi bhi element ko get kar skte hai jitne bhi tarike hmm css mai style ke liye use karte hai wo sab hi yha pe use hote hai thats why we call them css selector method//it returns a node list if elements are more than 1
+//for id 
+const username1=document.querySelector("#username");//for id we use #
+console.log(username1);
+
+//for class 
+const firstFormElement=document.querySelector(".form-group");//. for class
+console.log(firstFormElement);
+
+const allFormElements1=document.querySelectorAll(".form-group");
+console.log(allFormElements1);//returns a node list
+
+//for direct selection
+const firstLabel=document.querySelector("label");
+console.log(firstLabel);
+
+const allLabel1=document.querySelectorAll("label"); //returns a node list 
+console.log(allLabel1);
+
+//for attributes
+const textElement=document.querySelector("[type]");
+console.log(textElement);
+
+
+//html collection is a live list of elements
+//node list is static list of nodes 
+//nodes can be text node ,element node and comment node etc  
