@@ -89,7 +89,7 @@ parent();//the ability of child function to use the variable x in it is called l
         // let a=2;
         {
             // let a=3;
-            console.log(a);//blue {} mai a nhi mila to pink{} mai check kia  wha ni mila to yellow{} wala a print kar dia
+            console.log(a)//blue {} mai a nhi mila to pink{} mai check kia  wha ni mila to yellow{} wala a print kar dia
         }
     }
 }
@@ -120,3 +120,6 @@ function parameterDestructing({name,age}){
     console.log(age);
 }
 parameterDestructing(obj);
+console.log("nikit ais present");
+
+

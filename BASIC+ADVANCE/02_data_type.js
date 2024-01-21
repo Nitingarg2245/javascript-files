@@ -3,9 +3,9 @@
 //null number string symbol bigint boolean undefined 
 let a=null;
 let b=5;
-let c="hello";
+let c="hello"
 let d=Symbol("hmm hai na");
-let e=BigInt("500");
+let e=BigInt(123);
 let f=true;
 let g=undefined;
 let h;//it will also work as undefined 
@@ -19,7 +19,7 @@ const person={
     colour:"wheatish",
 }
 console.log(person);//printing the whole object
-console.log(person.age);//accessing the 
+console.log(person.age);
 console.log(person.name);
 console.log(person.colour);
 
@@ -46,3 +46,31 @@ console.log(maxSafeValue,minSafeValue);//after these values javascript looses pr
 let normalNum=9007199254709912345;
 let bigNum=900719925474099123456n;
 console.log(normalNum,bigNum);//as clear from the output u can see the normal number has lost precsion while the bigint number is precise 
+
+
+//about new data type symbols read here 
+//https://www.programiz.com/javascript/symbol
+
+let id1=Symbol("id");
+let id2=Symbol("id");
+
+console.log(id1===id2);//false as symbol always produce unique values
+let id=Symbol("id");
+console.log(id);
+const obj={
+    [id]:123,//u can use  value generated through symbol as key by using [] only
+    age:25
+}
+console.log(obj[id]);//can be accessed by [] only
+//but in for in loops on object these symbols are ignored 
+
+
+//undefined vs NULL
+//undefined means when a variable is declared but value is not assisgned as seen above with varible h at line 11 
+console.log(h);
+console.log(typeof h);
+
+//In JavaScript null is "nothing". It is supposed to be something that doesn't exist.Unfortunately, in JavaScript, the data type of null is an object.You can consider it a bug in JavaScript that typeof null is an object. It should be null.
+console.log(typeof null);
+console.log(undefined==null);//both of them are equal in value
+console.log(undefined===null);//both of them are equal in value type differs

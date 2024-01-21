@@ -88,4 +88,29 @@ counter();
 counter();
 //this is h0w closures help us 
 
+//let see some more things 
+
+function setcounter(){
+    let count=0;
+    return function (){
+        console.log(++count);
+    }
+}
+let counter1=setcounter();//yha pe function return hua with closure set{count:0}
+let counter2=setcounter();//yha pe function return hua with closure set{count:0}
+counter1(); 
+counter1();
+counter1();
+counter1();
+counter1();
+counter1();
+counter1();
+counter1();
+//jab bhi function return hoga har ek ke pas apna closure set hoga
+counter2();
+counter2();
+counter2();
+counter2();
+counter2();
+
 
